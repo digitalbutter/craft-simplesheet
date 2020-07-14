@@ -16,7 +16,7 @@ class Sheet extends Model
 
   public $fieldId;
 
-  public $data = [];
+  public $data = null;
 
   public function __construct($config = [])
   {

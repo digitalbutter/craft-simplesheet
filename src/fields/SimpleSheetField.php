@@ -98,7 +98,7 @@ class SimpleSheetField extends Field
             $sheet = new Sheet($value);
         } else {
             $sheet = new Sheet([
-                'data' => '',
+                'data' => null,
             ]);
         }
 

@@ -71,7 +71,7 @@
 
             // If there is existing data available, load it into the spreadsheet
             let sheetData = JSON.parse(document.getElementById(this.options.namespace).value);
-            if (sheetData !== null) {
+            if (sheetData.data !== null) {
                 _this.simplesheet.loadData(sheetData.data);
             }
 
