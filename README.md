@@ -7,9 +7,6 @@ Provides an additional Spreadsheet Field Type for Craft CMS.
 ## TODO ##
 
 - Remove unnecessary references, attributes, etc from code
-- Remove local copy of HoT for admin section (change to CDN reference)
-- Clean up settings and input templates
-- Add a plugin icon
 
 ## Requirements
 
