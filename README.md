@@ -2,17 +2,14 @@
 
 Provides an additional Spreadsheet Field Type for Craft CMS.
 
-![Screenshot](resources/img/plugin-logo.png)
+![Screenshot](resources/img/plugin-banner.png)
 
 ## TODO ##
 
 - Remove unnecessary references, attributes, etc from code
 - Remove local copy of HoT for admin section (change to CDN reference)
 - Clean up settings and input templates
-- Remove unnecessary Event from main plugin file
-- Clean up code comments
 - Add a plugin icon
-- Update this README.MD
 
 ## Requirements
 
