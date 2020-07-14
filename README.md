@@ -18,6 +18,8 @@ Provides an additional Spreadsheet Field Type for Craft CMS.
 
 This plugin requires Craft CMS 3.0.0-beta.23 or later.
 
+SimpleSheets utilizes a non-commercial instance of [Handsontable](https://handsontable.com) via CDN to render spreadsheets. You can find a copy of the Handsontable license online [here](https://handsontable.com/static/licenses/non-commercial/v2/handsontable-non-commercial-license.pdf).
+
 ## Installation
 
 To install the plugin, follow these instructions.
@@ -55,5 +57,3 @@ Some things to do, and ideas for potential features:
 * Support for non-volatile display settings (text alignment, column width, etc)
 * Cell colors
 * Cell borders
-
-Brought to you by [Daniel Jackson](https://github.com/dgjackson)
