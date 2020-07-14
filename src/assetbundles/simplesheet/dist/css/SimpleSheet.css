@@ -1,0 +1,35 @@
+/**
+ * SimpleSheet plugin for Craft CMS
+ *
+ * SimpleSheet Field CSS
+ *
+ * @author    Daniel Jackson
+ * @copyright Copyright (c) 2020 Daniel Jackson
+ * @link      https://github.com/dgjackson
+ * @package   SimpleSheet
+ * @since     1
+ */
+
+ .simplesheetWrapper {
+  overflow: auto;
+  height: 50vh;
+  width: 100%;
+  word-wrap: initial;
+ }
+
+table.simplesheet th:not(:last-child),
+table.simplesheet td:not(:last-child) {
+  padding: 0 4px;
+}
+
+body.ltr table.simplesheet thead th, table.simplesheet th {
+  text-align: center;
+}
+
+table.simplesheet th, table.simplesheet td {
+  padding: 0 4px;
+}
+
+.lp-editor-container, .lp-preview-container {
+  z-index: 200;
+}

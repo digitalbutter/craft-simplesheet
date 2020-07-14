@@ -1,0 +1,29 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * SimpleSheet plugin for Craft CMS 3.x
+ *
+ * SimpleSheet Field Input
+ *
+ * @author    Daniel Jackson
+ * @copyright Copyright (c) 2020 Daniel Jackson
+ * @link      https://github.com/dgjackson
+ * @package   SimpleSheet
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.hidden({
+    id: name,
+    name: name,
+    value: value|json_encode,
+})}}
+
+<div class="simplesheetWrapper">
+    <div id="{{ name }}-simplesheet"></div>
+</div>
+<div class="simplesheet-instructions">
+    <p>Instructions go here</p>
+</div>

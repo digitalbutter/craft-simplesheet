@@ -1,0 +1,44 @@
+{
+    "name": "dgjackson/simplesheet",
+    "description": "Provides an additional Spreadsheet Field Type for Craft CMS.",
+    "type": "craft-plugin",
+    "version": "1.0.1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "simplesheet"
+    ],
+    "support": {
+        "docs": "https://github.com/digitalbutter/craft-simplesheet",
+        "source": "https://github.com/digitalbutter/craft-simplesheet",
+        "issues": "https://github.com/digitalbutter/craft-simplesheet/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Jackson",
+            "homepage": "https://github.com/dgjackson"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "dgjackson\\simplesheet\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "SimpleSheet",
+        "handle": "simplesheet",
+        "developer": "Daniel Jackson",
+        "developerUrl": "https://github.com/dgjackson",
+        "class": "dgjackson\\simplesheet\\SimpleSheet"
+    }
+}
