@@ -1,3 +1,5 @@
+![SimpleSheet Logo](src/icon.svg)
+
 # SimpleSheet plugin for Craft CMS 3.x
 
 Provides an additional Spreadsheet Field Type for Craft CMS.
