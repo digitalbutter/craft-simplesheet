@@ -18,8 +18,10 @@ use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\helpers\Db;
-use yii\db\Schema;
+use craft\web\View;
 use craft\helpers\Json;
+
+use yii\db\Schema;
 
 /**
  * SimpleSheet Field
@@ -161,6 +163,18 @@ class SimpleSheetField extends Field
      */
     public function getInputHtml($value, ElementInterface $element = null): string
     {
+        // Register HoT assets from CDN
+        Craft::$app->getView()->registerScript(
+            '',
+            View::POS_END,
+            ['src' => 'https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js'],
+            md5('https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js'),
+        );
+
+        Craft::$app->getView()->registerCssFile(
+            'https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css'
+          );
+
         // Register our asset bundle
         Craft::$app->getView()->registerAssetBundle(SimpleSheetFieldAsset::class);
 

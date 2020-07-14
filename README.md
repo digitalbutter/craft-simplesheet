@@ -142,6 +142,7 @@ Embed accepts an optional `options` object as its only parameter. You may use th
 
 This plugin is currently in its early stages and has limited functionality. Features planned for future versions:
 * Support for non-volatile display settings (text alignment, column width, etc), allowing these settings to persist between views and apply to the frontend.
+* Conditional formatting.
 * Apply background colours to cells.
 * Apply simple borders to cells.
 * Define data types of cells (text, numeric, decimal, etc)
