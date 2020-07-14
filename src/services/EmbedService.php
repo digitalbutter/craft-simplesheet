@@ -2,7 +2,7 @@
 /**
  * Spreadsheets for Craft CMS
  * 
- * @link      https://github.com/dgjackson
+ * @link      https://github.com/digitalbutter/craft-simplesheet
  * @copyright Copyright (c) 2020 Daniel Jackson
  */
 
@@ -108,7 +108,7 @@ JS;
       $css .= 'width:' . $options->width . ';';
     
     if ($options->height !== null)
-      $css .= 'height:' . $options->height . 'px;';
+      $css .= 'height:' . $options->height . ';';
 
     return $css . '}';
   }

@@ -2,7 +2,7 @@
 /**
  * Spreadsheets for Craft CMS
  * 
- * @link      https://github.com/dgjackson
+ * @link      https://github.com/digitalbutter/craft-simplesheet
  * @copyright Copyright (c) 2020 Daniel Jackson
  */
 
@@ -30,8 +30,8 @@ class EmbedOptions
   /** @var string The width of the spreadsheet container */
   public $width = '100%';
 
-  /** @var string The height of the spreadsheet container */
-  public $height = '500';
+  /** @var string The height of the spreadsheet container. Accepts %, em, px, etc. */
+  public $height = '500px';
 
   /** @var string The spreadsheet data */
   public $data = '';

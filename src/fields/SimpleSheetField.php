@@ -4,7 +4,7 @@
  *
  * Provides an additional Spreadsheet Field Type for Craft CMS.
  *
- * @link      https://github.com/dgjackson
+ * @link      https://github.com/digitalbutter/craft-simplesheet
  * @copyright Copyright (c) 2020 Daniel Jackson
  */
 
@@ -23,10 +23,6 @@ use craft\helpers\Json;
 
 /**
  * SimpleSheet Field
- *
- * Whenever someone creates a new field in Craft, they must specify what
- * type of field it is. The system comes with a handful of field types baked in,
- * and we’ve made it extremely easy for plugins to add new ones.
  *
  * https://craftcms.com/docs/plugins/field-types
  *
@@ -49,7 +45,7 @@ class SimpleSheetField extends Field
     /**
      * @var mixed
      */
-    public $data = '';
+    public $data = null;
 
     // Static Methods
     // =========================================================================
@@ -86,6 +82,14 @@ class SimpleSheetField extends Field
         return $rules;
     }
 
+    /**
+     * Normalizes the field’s value for use (Sheet).
+     * 
+     * @param mixed                 $value   The raw field value
+     * @param ElementInterface|null $element The element the field is associated with, if there is one
+     *
+     * @return mixed The prepared field value
+     */
     public function normalizeValue($value, ElementInterface $element = null)
     {
         if (is_string($value)) {
@@ -114,39 +118,6 @@ class SimpleSheetField extends Field
 
         return $sheet;
     }
-
-    // /**
-    //  * Normalizes the field’s value for use.
-    //  *
-    //  * This method is called when the field’s value is first accessed from the element. For example, the first time
-    //  * `entry.myFieldHandle` is called from a template, or right before [[getInputHtml()]] is called. Whatever
-    //  * this method returns is what `entry.myFieldHandle` will likewise return, and what [[getInputHtml()]]’s and
-    //  * [[serializeValue()]]’s $value arguments will be set to.
-    //  *
-    //  * @param mixed                 $value   The raw field value
-    //  * @param ElementInterface|null $element The element the field is associated with, if there is one
-    //  *
-    //  * @return mixed The prepared field value
-    //  */
-    // public function _normalizeValue($value, ElementInterface $element = null)
-    // {
-    //     if (is_string($value)) {
-    //         $value = Json::decodeIfJson($value);
-    //         return $value;
-    //     }
-
-    //     return [];
-
-
-    //     // if (is_string($value)) {
-    //     //     $json = json_decode($value, true);
-    //     //     if ($json) {
-    //     //         return $json;
-    //     //     }
-    //     // }
-
-    //     // return [];
-    // }
 
     /**
      * Prepares the field’s value to be stored somewhere, like the content table or JSON-encoded in an entry revision table.

@@ -18,8 +18,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Daniel Jackson",
-            "homepage": "https://github.com/dgjackson"
+            "name": "Digital Butter",
+            "homepage": "https://github.com/digitalbutter"
         }
     ],
     "require": {
@@ -38,7 +38,7 @@
         "name": "SimpleSheet",
         "handle": "simplesheet",
         "developer": "Daniel Jackson",
-        "developerUrl": "https://github.com/dgjackson",
+        "developerUrl": "https://github.com/digitalbutter",
         "class": "dgjackson\\simplesheet\\SimpleSheet"
     }
 }

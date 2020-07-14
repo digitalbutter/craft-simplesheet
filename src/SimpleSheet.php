@@ -4,7 +4,7 @@
  *
  * Provides an additional Spreadsheet Field Type for Craft CMS.
  *
- * @link      https://github.com/dgjackson
+ * @link      https://github.com/digitalbutter
  * @copyright Copyright (c) 2020 Daniel Jackson
  */
 
@@ -56,40 +56,18 @@ class SimpleSheet extends Plugin
     // Public Properties
     // =========================================================================
 
-    /**
-     * To execute your plugin’s migrations, you’ll need to increase its schema version.
-     *
-     * @var string
-     */
     public $schemaVersion = '1';
 
-    /**
-     * Set to `true` if the plugin should have a settings view in the control panel.
-     *
-     * @var bool
-     */
     public $hasCpSettings = false;
 
-    /**
-     * Set to `true` if the plugin should have its own section (main nav item) in the control panel.
-     *
-     * @var bool
-     */
     public $hasCpSection = false;
 
     // Public Methods
     // =========================================================================
 
     /**
-     * Set our $plugin static property to this class so that it can be accessed via
-     * SimpleSheet::$plugin
-     *
-     * Called after the plugin class is instantiated; do any one-time initialization
-     * here such as hooks and events.
-     *
-     * If you have a '/vendor/autoload.php' file, it will be loaded for you automatically;
-     * you do not need to load it in your init() method.
-     *
+     * Instantiates plugin and creates a static property to this class for global
+     * access. Performs one-time initialization for hooks and events.
      */
     public function init()
     {
@@ -106,17 +84,6 @@ class SimpleSheet extends Plugin
             Fields::EVENT_REGISTER_FIELD_TYPES,
             function (RegisterComponentTypesEvent $event) {
                 $event->types[] = SimpleSheetField::class;
-            }
-        );
-
-        // Do something after we're installed
-        Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                    // We were just installed
-                }
             }
         );
 
@@ -144,8 +111,4 @@ class SimpleSheet extends Plugin
     {
         return parent::getSettings();
     }
-
-    // Protected Methods
-    // =========================================================================
-
 }

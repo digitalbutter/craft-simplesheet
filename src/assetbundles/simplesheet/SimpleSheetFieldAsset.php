@@ -4,7 +4,7 @@
  *
  * Provides an additional Spreadsheet Field Type for Craft CMS.
  *
- * @link      https://github.com/dgjackson
+ * @link      https://github.com/digitalbutter/craft-simplesheet
  * @copyright Copyright (c) 2020 Daniel Jackson
  */
 

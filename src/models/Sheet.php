@@ -8,32 +8,42 @@ use dgjackson\simplesheet\SimpleSheet;
 
 class Sheet extends Model
 {
-  public $id;
 
-  public $ownerId;
+    // Public Properties
+    // =========================================================================
 
-  public $ownerSiteId;
+    public $id;
 
-  public $fieldId;
+    public $ownerId;
 
-  public $data = null;
+    public $ownerSiteId;
 
-  public function __construct($config = [])
-  {
-    parent::__construct($config);
-  }
+    public $fieldId;
 
-  public function embed($options = [])
-  {
-    $options = $this->_getSheetOptions($options);
+    public $data = null;
 
-    return SimpleSheet::getInstance()->embed->embed($options);
-  }
+    // Public Methods
+    // =========================================================================
 
-  private function _getSheetOptions($options)
-  {
-    return array_merge($options, [
-      'data' => $this->data,
-    ]);
-  }
+    public function __construct($config = [])
+    {
+        parent::__construct($config);
+    }
+
+    public function embed($options = [])
+    {
+        $options = $this->_getSheetOptions($options);
+
+        return SimpleSheet::getInstance()->embed->embed($options);
+    }
+
+    // Private Methods
+    // =========================================================================
+
+    private function _getSheetOptions($options)
+    {
+        return array_merge($options, [
+            'data' => $this->data,
+        ]);
+    }
 }
