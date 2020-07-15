@@ -6,10 +6,6 @@ Provides an additional Spreadsheet Field Type for Craft CMS.
 
 ![Screenshot](resources/img/plugin-banner.png)
 
-## TODO ##
-
-- Remove unnecessary references, attributes, etc from code
-
 ## Requirements
 
 This plugin requires Craft CMS 3.0.0-beta.23 or later.
@@ -127,6 +123,8 @@ Note that formatting and styling features are currently not supported and will n
 
 ### Displaying the SimpleSheet
 
+#### Embed
+
 Rendering a non-editable version of your spreadsheet in the frontend is a simple matter of using the `embed` method on your SimpleSheet field. This will return a div container tag with your provided (or auto-generated ID), and will include the JS and CSS required to render the spreadsheet.
 
         {{ mySimpleSheetField.embed() }}
@@ -136,6 +134,24 @@ Embed accepts an optional `options` object as its only parameter. You may use th
         {{ mySimpleSheetField.embed({
                 id: 'sheet',
         }) }}
+
+#### Manual output
+
+If you wish to access the raw data for freeform templating, you can retrieve it using the `data` property on the spreadsheet to retrieve an array of row arrays.
+
+        {{ mySimpleSheetField.data }}
+
+Display the data as a JSON-formatted string:
+
+        {{ mySimpleSheetField.data | json_encode(constant('JSON_PRETTY_PRINT')) }}
+
+Retrieve the number of rows:
+
+        {{ mySimpleSheetField.data | length }}
+
+Retrieve the number of columns:
+
+        {{ mySimpleSheetField.data[0] | length }}
 
 ## SimpleSheet Roadmap
 
