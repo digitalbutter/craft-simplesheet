@@ -129,29 +129,35 @@ Rendering a non-editable version of your spreadsheet in the frontend is a simple
 
         {{ mySimpleSheetField.embed() }}
 
-Embed accepts an optional `options` object as its only parameter. You may use this to pass an `id` string, which will be used to create the SimpleSheet container in HTML and referenced by JavaScript.
+Embed accepts an optional `options` object as its only parameter. The following values are currently accepted:
+
+ - `id` : Provide the id of a html element which will be used to create the SimpleSheet container in HTML.
+ - `width` : Define the SimpleSheet's width as a string. Default `100%`.
+ - `height` : Define the Simplesheet's height. Default `500px`.
 
         {{ mySimpleSheetField.embed({
-                id: 'sheet',
+                id: 'sheetElement',
+                width: '800px',
+                height: '600px',
         }) }}
 
 #### Manual output
 
 If you wish to access the raw data for freeform templating, you can retrieve it using the `data` property on the spreadsheet to retrieve an array of row arrays.
 
-        {{ mySimpleSheetField.data }}
+        {% set sheetData = mySimpleSheetField.data %}
 
 Display the data as a JSON-formatted string:
 
-        {{ mySimpleSheetField.data | json_encode(constant('JSON_PRETTY_PRINT')) }}
+        {{ sheetData | json_encode(constant('JSON_PRETTY_PRINT')) }}
 
 Retrieve the number of rows:
 
-        {{ mySimpleSheetField.data | length }}
+        {{ sheetData | length }}
 
 Retrieve the number of columns:
 
-        {{ mySimpleSheetField.data[0] | length }}
+        {{ sheetData[0] | length }}
 
 ## SimpleSheet Roadmap
 

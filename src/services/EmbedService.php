@@ -57,11 +57,11 @@ class EmbedService extends Component
     $js = <<<JS
 const {$options->id} = new Handsontable(document.getElementById('{$options->id}'), {
     data: {$data},
-    startCols: 26,
-    startRows: 100,
     readOnly: true,
     colHeaders: true,
     rowHeaders: true,
+    filters: true,
+    stretchH: 'all',
     columnSorting: {
       indicator: true,
     },
