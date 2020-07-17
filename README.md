@@ -127,7 +127,7 @@ Note that formatting and styling features are currently not supported and will n
 
 Rendering a non-editable version of your spreadsheet in the frontend is a simple matter of using the `embed` method on your SimpleSheet field. This will return a div container tag with your provided (or auto-generated ID), and will include the JS and CSS required to render the spreadsheet.
 
-        {{ mySimpleSheetField.embed() }}
+        {{ entry.mySimpleSheetField.embed() }}
 
 Embed accepts an optional `options` object as its only parameter. The following values are currently accepted:
 
@@ -135,8 +135,9 @@ Embed accepts an optional `options` object as its only parameter. The following 
  - `width` : Define the SimpleSheet's width as a string. Default `100%`.
  - `height` : Define the Simplesheet's height. Default `500px`.
 
-        {{ mySimpleSheetField.embed({
-                id: 'sheetElement',
+
+        {{ entry.mySimpleSheetField.embed({
+                id: 'sheet',
                 width: '800px',
                 height: '600px',
         }) }}
