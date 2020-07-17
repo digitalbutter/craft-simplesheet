@@ -2,13 +2,9 @@
 
 # SimpleSheet plugin for Craft CMS 3.x
 
-Provides an additional Spreadsheet Field Type for Craft CMS.
+Provides an additional Spreadsheet Field Type for Craft CMS. Read about why we built this on the [Digital Butter blog](https://www.butter.com.hk/blog/announcing-simplesheet-plugin-for-craft-cms).
 
-![Screenshot](resources/img/plugin-banner.png)
-
-## TODO ##
-
-- Remove unnecessary references, attributes, etc from code
+![Screenshot](resources/img/simplesheet-demo.gif)
 
 ## Requirements
 
@@ -127,15 +123,42 @@ Note that formatting and styling features are currently not supported and will n
 
 ### Displaying the SimpleSheet
 
+#### Embed
+
 Rendering a non-editable version of your spreadsheet in the frontend is a simple matter of using the `embed` method on your SimpleSheet field. This will return a div container tag with your provided (or auto-generated ID), and will include the JS and CSS required to render the spreadsheet.
 
         {{ entry.mySimpleSheetField.embed() }}
 
-Embed accepts an optional `options` object as its only parameter. You may use this to pass an `id` string, which will be used to create the SimpleSheet container in HTML and referenced by JavaScript.
+Embed accepts an optional `options` object as its only parameter. The following values are currently accepted:
+
+ - `id` : Provide the id of a html element which will be used to create the SimpleSheet container in HTML.
+ - `width` : Define the SimpleSheet's width as a string. Default `100%`.
+ - `height` : Define the Simplesheet's height. Default `500px`.
+
 
         {{ entry.mySimpleSheetField.embed({
                 id: 'sheet',
+                width: '800px',
+                height: '600px',
         }) }}
+
+#### Manual output
+
+If you wish to access the raw data for freeform templating, you can retrieve it using the `data` property on the spreadsheet to retrieve an array of row arrays.
+
+        {% set sheetData = mySimpleSheetField.data %}
+
+Display the data as a JSON-formatted string:
+
+        {{ sheetData | json_encode(constant('JSON_PRETTY_PRINT')) }}
+
+Retrieve the number of rows:
+
+        {{ sheetData | length }}
+
+Retrieve the number of columns:
+
+        {{ sheetData[0] | length }}
 
 ## SimpleSheet Roadmap
 

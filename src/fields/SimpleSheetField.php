@@ -38,13 +38,6 @@ class SimpleSheetField extends Field
     // =========================================================================
 
     /**
-     * Some attribute
-     *
-     * @var string
-     */
-    public $someAttribute = 'Some Default';
-
-    /**
      * @var mixed
      */
     public $data = null;
