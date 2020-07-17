@@ -2,7 +2,7 @@
 
 # SimpleSheet plugin for Craft CMS 3.x
 
-Provides an additional Spreadsheet Field Type for Craft CMS. Read about why we built this on the [Digital Butter blog](https://www.butter.com.hk/blog/announcing-simplesheet-plugin-for-craft-cms).
+Provides an additional Spreadsheet Field Type for Craft CMS. Read about why we built this on the [Digital Butter blog](https://www.butter.com.hk/blog/announcing-simplesheet-craft-cms-plugin).
 
 ![Screenshot](resources/img/simplesheet-demo.gif)
 
