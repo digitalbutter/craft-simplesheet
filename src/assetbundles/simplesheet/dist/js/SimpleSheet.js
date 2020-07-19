@@ -38,7 +38,6 @@
             var _this = this;
 
             $(function () {
-/* -- _this.options gives us access to the $jsonVars that our FieldType passed down to us */
                 _this.initSimplesheet();
             });
         },
@@ -55,6 +54,7 @@
                 contextMenu: true,
                 dropdownMenu: true,
                 rowHeaders: true,
+                filters: true,
                 manualColumnMove: true,
                 manualRowMove: true,
                 manualColumnResize: true,
@@ -77,6 +77,25 @@
 
             // Register our data change hooks after the Simplesheet instance has been created
             Handsontable.hooks.add('afterChange', this.updateSimplesheet);
+            Handsontable.hooks.add('afterColumnMove', this.updateSimplesheet);
+            Handsontable.hooks.add('afterRowMove', this.updateSimplesheet);
+            Handsontable.hooks.add('afterRemoveCol', this.updateSimplesheet);
+            Handsontable.hooks.add('afterRemoveRow', this.updateSimplesheet);
+            Handsontable.hooks.add('afterCreateRow', this.updateSimplesheet);
+            Handsontable.hooks.add('afterCreateCol', this.updateSimplesheet);
+            Handsontable.hooks.add('afterColumnSort', this.updateSimplesheet);
+            
+            // If the user is currently editing a cell and the 'Save' keyboard
+            // shortcut (ctrl+s/cmd+s) is pressed, we want to commit the current
+            // cell changes.
+            Craft.cp.on('beforeSaveShortcut', $.proxy(function (e, _this) {
+                if (this.simplesheet.getActiveEditor() !== undefined) {
+                    if (this.simplesheet.getActiveEditor().isOpened()) {
+                        this.simplesheet.destroyEditor();
+                        this.updateSimplesheet();
+                    }
+                }
+            }, this));
         },
 
         /**
