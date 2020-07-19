@@ -2,7 +2,7 @@
     "name": "dgjackson/simplesheet",
     "description": "Provides an additional Spreadsheet Field Type for Craft CMS.",
     "type": "craft-plugin",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "keywords": [
         "craft",
         "cms",

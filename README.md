@@ -52,15 +52,11 @@ When using a SimpleSheet field in the Entries page, the following actions are av
 - Duplicating data
 - Sorting data
 - Rearranging row and column order
-- Filtering
+- Filtering *
 - Keyboard navigation
 - Copying from Excel and Google Sheets
 
-Currently, only the following actions affect the underlying spreadsheet data and will be saved between view states:
-- Inserting/Deleting rows and columns
-- Duplicating data
-- Rearranging row and column order
-- Copying from Excel and Google Sheets
+* Note that filters do not permanently alter the source data and will not be saved. This will be updated in a future version.
 
 #### Inserting and Deleting rows and columns
 
@@ -164,6 +160,7 @@ Retrieve the number of columns:
 
 This plugin is currently in its early stages and has limited functionality. Features planned for future versions:
 * Support for non-volatile display settings (text alignment, column width, etc), allowing these settings to persist between views and apply to the frontend.
+* Allow filters to be carried over between viewing sessions without permanently altering the source data.
 * Conditional formatting.
 * Apply background colours to cells.
 * Apply simple borders to cells.
